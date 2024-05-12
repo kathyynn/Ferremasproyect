@@ -192,7 +192,6 @@ main{
 }
 
 
-
 .contenedor__todo {
     position: relative; /* Importante para posicionar elementos absolutos relativos a este contenedor */
 }

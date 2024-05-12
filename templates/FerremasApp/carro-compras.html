@@ -85,35 +85,45 @@
             <!-- Actions -->
             <section>
                 <ul class="actions stacked">
-                    <li><a href="#" class="button large fit">Iniciar Sesión</a></li>
+                    <li><a href="/FerremasApp/login" class="button large fit">Ingresar</a></li>
                 </ul>
             </section>
         </section>
 
-
-        <form action="{% url 'conversor-moneda' %}" method="get">
-            <input type="number" name="precio" placeholder="Precio final">
-            <select name="indicador">
-                <option value="dolar">Dolar</option>
-                <option value="uf">Unidades de fomento</option>
-                <option value="ivp">Indice de valor promedio (IVP)</option>
-                <option value="dolar_intercambio">Dólar acuerdo</option>
-                <option value="euro">Euro</option>
-                <option value="ipc">Indice de Precios al Consumidor (IPC)</option>
-                <option value="utm">Unidad Tributaria Mensual (UTM)</option>
-                <option value="imacec">Imacec</option>
-                <option value="tpm">Tasa Política Monetaria (TPM)</option>
-                <option value="libra_cobre">Libra de Cobre</option>
-                <option value="tasa_desempleo">Tasa de desempleo</option>
-                <option value="bitcoin">Bitcoin</option>
-            </select>
-            <input type="text" name="date" placeholder="Fecha">
-            <button type="submit">Consultar</button>
-        </form>
-
-
-
-        
+        <div class="container" style="width: fit-content;">
+            <form action="{% url 'conversor-moneda' %}" method="get">
+                <div class="form-group">
+                    <label for="indicador" style="margin: 1em 0 0 0;">Indicador:</label>
+                    <select class="form-control" id="indicador" name="indicador">
+                        <option value="dolar">Dolar</option>
+                        <option value="uf">Unidades de fomento</option>
+                        <option value="ivp">Indice de valor promedio (IVP)</option>
+                        <option value="dolar_intercambio">Dólar acuerdo</option>
+                        <option value="euro">Euro</option>
+                        <option value="ipc">Indice de Precios al Consumidor (IPC)</option>
+                        <option value="utm">Unidad Tributaria Mensual (UTM)</option>
+                        <option value="imacec">Imacec</option>
+                        <option value="tpm">Tasa Política Monetaria (TPM)</option>
+                        <option value="libra_cobre">Libra de Cobre</option>
+                        <option value="tasa_desempleo">Tasa de desempleo</option>
+                        <option value="bitcoin">Bitcoin</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date" style="margin: 1em 0 0 0;">Fecha:</label>
+                    <input type="text" class="form-control" id="date" name="date" placeholder="Fecha">
+                </div>
+                <div class="form-group">
+                    <label for="precioFinal" style="margin: 1em 0 0 0;">Precio Final:</label>
+                    <input type="number" class="form-control" id="precioFinal" name="precioFinal"
+                        placeholder="Precio final">
+                </div>
+                <button type="submit" class="mt-4 d-flex m-auto">Consultar</button>
+    
+                <h1 id="precio-convertido"></h1>
+            </form>
+        </div>
+    
 
         <!-- Footer -->
         <section id="footer">
@@ -125,7 +135,8 @@
                     <a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/kathyyn_n/?hl=es" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+                    <a href="https://www.instagram.com/kathyyn_n/?hl=es" class="icon brands fa-instagram"><span
+                            class="label">Instagram</span></a>
                 </li>
                 <li>
                     <a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a>

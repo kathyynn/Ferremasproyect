@@ -66,19 +66,29 @@ def sendPage(request):
 
 ##Indicadores moneda
 class Mindicador:
-    def __init__(self, indicador, date):
+    def __init__(self, indicador, date, precioFinal):
         self.indicador = indicador
         self.date = date
-
+        self.precioFinal = precioFinal
 
 def conversorMoneda(request):
     indicador = request.GET.get('indicador', None)
     date = request.GET.get('date', None)
+    precio_final = request.GET.get('precioFinal', None)
 
-    if indicador and date:
+    if indicador and date and precio_final:
+        # Obtener el valor del indicador para la fecha dada
         url = f'https://mindicador.cl/api/{indicador}/{date}'
         response = requests.get(url)
         data = json.loads(response.text)
-        return JsonResponse(data)
+        if 'serie' in data and len(data['serie']) > 0:
+            valor_indicador = data['serie'][0]['valor']
+
+            # Convertir el precio final a la moneda del indicador
+            precio_final_convertido = float(precio_final) / valor_indicador
+
+            return render(request, 'carro_compras.html', {'precioFinalConvertido': precio_final_convertido})
+        else:
+            return JsonResponse({'error': 'Parámetros faltantes'}, status=400)
     else:
         return JsonResponse({'error': 'Parámetros faltantes'}, status=400)
