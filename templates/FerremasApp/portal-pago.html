@@ -12,9 +12,11 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/portal-pago.css" />
 </head>
 
 <body class="single is-preload">
+
     <!-- Wrapper -->
     <div id="wrapper">
         <!-- Header -->
@@ -91,57 +93,27 @@
         </section>
 
 
-        <form action="{% url 'conversor-moneda' %}" method="get">
-            <input type="number" name="precio" placeholder="Precio final">
-            <select name="indicador">
-                <option value="dolar">Dolar</option>
-                <option value="uf">Unidades de fomento</option>
-                <option value="ivp">Indice de valor promedio (IVP)</option>
-                <option value="dolar_intercambio">Dólar acuerdo</option>
-                <option value="euro">Euro</option>
-                <option value="ipc">Indice de Precios al Consumidor (IPC)</option>
-                <option value="utm">Unidad Tributaria Mensual (UTM)</option>
-                <option value="imacec">Imacec</option>
-                <option value="tpm">Tasa Política Monetaria (TPM)</option>
-                <option value="libra_cobre">Libra de Cobre</option>
-                <option value="tasa_desempleo">Tasa de desempleo</option>
-                <option value="bitcoin">Bitcoin</option>
-            </select>
-            <input type="text" name="date" placeholder="Fecha">
-            <button type="submit">Consultar</button>
+        <form id="form-checkout">
+            <div id="form-checkout__cardNumber" class="container"></div>
+            <div id="form-checkout__expirationDate" class="container"></div>
+            <div id="form-checkout__securityCode" class="container"></div>
+            <input type="text" id="form-checkout__cardholderName" />
+            <select id="form-checkout__issuer"></select>
+            <select id="form-checkout__installments"></select>
+            <select id="form-checkout__identificationType"></select>
+            <input type="text" id="form-checkout__identificationNumber" />
+            <input type="email" id="form-checkout__cardholderEmail" />
+        
+            <button type="submit" id="form-checkout__submit">Pagar</button>
+            <progress value="0" class="progress-bar">Cargando...</progress>
         </form>
 
-
-
-        
-
-        <!-- Footer -->
-        <section id="footer">
-            <ul class="icons">
-                <li>
-                    <a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
-                </li>
-                <li>
-                    <a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/kathyyn_n/?hl=es" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
-                </li>
-                <li>
-                    <a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a>
-                </li>
-                <li>
-                    <a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a>
-                </li>
-            </ul>
-            <p class="copyright">
-                &copy; Untitled. Design: <a href="#">Duoc UC</a>.
-                Images: <a href="#">Duoc UC</a>.
-            </p>
-        </section>
     </div>
 
     <!-- Scripts -->
+    <script src="/static/js/mercadoPago.js"></script>
+
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/browser.min.js"></script>
     <script src="/static/js/breakpoints.min.js"></script>
