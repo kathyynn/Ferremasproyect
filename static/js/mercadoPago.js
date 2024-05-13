@@ -4,7 +4,7 @@ await loadMercadoPago();
 const mp = new window.MercadoPago("TEST-1554652e-87e7-401a-a35e-a375282428b2");
 
 const cardForm = mp.cardForm({
-    amount: "100.5",
+    amount: "2000",
     iframe: true,
     form: {
         id: "form-checkout",

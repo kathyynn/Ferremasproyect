@@ -15,6 +15,6 @@ urlpatterns = [
     path('carro-compras/', renderCarroCompras),
     path('admin-contador/', renderAdmin),
     path('portal-pago/', renderPortalPago),
-    path('process_payment/', sendPage, name='send-page'),
-    path('conversor-moneda/', conversorMoneda, name='conversor-moneda'),
+    path('process_payment/', sendPage),
+    path('conversor-moneda/', conversorMoneda),
 ]

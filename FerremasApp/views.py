@@ -63,14 +63,6 @@ def sendPage(request):
     
     print(payment)
 
-
-##Indicadores moneda
-class Mindicador:
-    def __init__(self, indicador, date, precioFinal):
-        self.indicador = indicador
-        self.date = date
-        self.precioFinal = precioFinal
-
 def conversorMoneda(request):
     indicador = request.GET.get('indicador', None)
     date = request.GET.get('date', None)
@@ -85,9 +77,10 @@ def conversorMoneda(request):
             valor_indicador = data['serie'][0]['valor']
 
             # Convertir el precio final a la moneda del indicador
-            precio_final_convertido = float(precio_final) / valor_indicador
+            precioConvertido = float(precio_final) / valor_indicador
+            precio_final_redondeado = round(precioConvertido, 5)
 
-            return render(request, 'carro_compras.html', {'precioFinalConvertido': precio_final_convertido})
+            return render(request, 'FerremasApp/carro-compras.html', {'precioConvertido': precio_final_redondeado})
         else:
             return JsonResponse({'error': 'Parámetros faltantes'}, status=400)
     else:
