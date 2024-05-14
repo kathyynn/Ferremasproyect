@@ -1,198 +1,85 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-}
-
-body{
-    background-image: url(/static/img/fondolog.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-main{
-    width: 100%;
-    padding: 20px;
-    margin: auto;
-    margin-top: 100px;
-}
-
-.contenedor__todo{
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-    position: relative;
-}
-
-.caja__trasera{
-    width: 100%;
-    padding: 10px 20px;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0e8d9; /* Fondo aún más suave */
     display: flex;
     justify-content: center;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: #c27c2b;
-
-}
-
-.caja__trasera div{
-    margin: 100px 40px;
-    color: white;
-    transition: all 500ms;
-}
-
-
-.caja__trasera div p,
-.caja__trasera button{
-    margin-top: 30px;
-}
-
-.caja__trasera div h3{
-    font-weight: 400;
-    font-size: 26px;
-}
-
-.caja__trasera div p{
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.caja__trasera button{
-    padding: 10px 40px;
-    border: 2px solid #fff;
-    font-size: 14px;
-    background: transparent;
-    font-weight: 600;
-    cursor: pointer;
-    color: white;
-    outline: none;
-    transition: all 300ms;
-}
-
-.caja__trasera button:hover{
-    background: #fff;
-    color: #46A2FD;
-}
-
-/*Formularios*/
-
-.contenedor__login-register{
-    display: flex;
     align-items: center;
-    width: 100%;
-    max-width: 380px;
-    position: relative;
-    top: -185px;
-    left: 10px;
-
-    /*La transicion va despues del codigo JS*/
-    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-.contenedor__login-register form{
+.login-style, .register-style {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     width: 100%;
-    padding: 80px 20px;
-    background: white;
-    position: absolute;
-    border-radius: 20px;
-}
-
-.contenedor__login-register form h2{
-    font-size: 30px;
+    max-width: 480px; /* Aumento del tamaño para PC */
     text-align: center;
+}
+
+h2 {
+    color: #364f6b; /* Color oscuro azul */
     margin-bottom: 20px;
-    color: #000000;
 }
 
-.contenedor__login-register form input{
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px;
-    border: none;
-    background: #F2F2F2;
-    font-size: 16px;
-    outline: none;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-.contenedor__login-register form button{
-    padding: 10px 40px;
-    margin-top: 40px;
-    border: none;
-    font-size: 14px;
-    background: #c27c2b;
-    font-weight: 600;
-    cursor: pointer;
+form p {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    width: calc(100% - 20px); /* Ajuste para el padding */
+    padding: 12px;
+    border: 2px solid #b8c6db; /* Color azul claro para el borde */
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #5C67F2; /* Azul más intenso al enfocar */
+}
+
+button {
+    padding: 15px;
+    background-color: #5C67F2; /* Azul para el botón */
     color: white;
-    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
 }
 
-
-
-
-.formulario__login{
-    opacity: 1;
-    display: block;
-}
-.formulario__register{
-    display: none;
+button:hover {
+    background-color: #4a54e1; /* Azul más oscuro al pasar el mouse */
 }
 
-
-
-@media screen and (max-width: 850px){
-
-    main{
-        margin-top: 50px;
-    }
-
-    .caja__trasera{
-        max-width: 350px;
-        height: 300px;
-        flex-direction: column;
-        margin: auto;
-    }
-
-    .caja__trasera div{
-        margin: 0px;
-        position: absolute;
-    }
-
-
-    /*Formularios*/
-
-    .contenedor__login-register{
-        top: -10px;
-        left: -5px;
-        margin: auto;
-    }
-
-    .contenedor__login-register form{
-        position: relative;
-    }
+a {
+    color: #6a7fdb; /* Azul más suave para los enlaces */
+    text-decoration: none;
+    margin-top: 25px;
 }
 
-.titulo {
-    font-size: 10vw; /* Tamaño del título relativo al ancho de la ventana */
-    text-align: center; /* Centra el título */
-    position: absolute; /* Posición absoluta para superponerlo */
-    top: 5%; /* Ajusta la posición vertical más arriba */
-    width: 100%; /* Ocupa todo el ancho */
+a:hover {
+    color: #5a6abf; /* Azul oscuro para el hover de enlaces */
 }
 
-.subtitulo {
-    font-size: 3vw; /* Tamaño del subtitulo relativo al ancho de la ventana */
-    text-align: center; /* Centra el subtitulo */
-    position: absolute; /* Posición absoluta para superponerlo */
-    top: 15%; /* Ajusta la posición vertical más arriba */
-    width: 100%; /* Ocupa todo el ancho */
+h1 {
+    font-size: 36px; /* Tamaño grande para el título */
+    color: #324A5F; /* Color azul oscuro, elegante */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y limpia */
+    text-align: center; /* Centrado del título */
+    margin-top: 0;
+    margin-bottom: 20px; /* Espacio después del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+    letter-spacing: 1px; /* Espaciado entre letras para una mejor lectura */
 }
-
-
-.contenedor__todo {
-    position: relative; /* Importante para posicionar elementos absolutos relativos a este contenedor */
-}
-

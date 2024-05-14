@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferremas</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/cssLog/estilos.css">
 </head>
-
 <body>
-    <h2>Login</h2>
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Ingresar</button>
-    </form>
-    <a href="{% url 'register' %}">Registrar</a>
+    <div class="container">
+        <h2>Login</h2>
+        <form method="post" action="{% url 'login' %}" class="form">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <a href="{% url 'register' %}">Register</a>
+    </div>
 </body>
-
 </html>
