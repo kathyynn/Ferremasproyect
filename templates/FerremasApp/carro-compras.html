@@ -122,7 +122,10 @@
                 
             </form>
         </div>
-        <h1 class="mt-4 text-center mb-4">El precio transformado es de: {{precioConvertido}}</h1>
+
+        {%if precioConvertido%}
+            <h1 class="mt-4 text-center mb-4">El precio transformado es de: {{precioConvertido}}</h1>
+        {% endif %}
 
         <!-- Footer -->
         <section id="footer">

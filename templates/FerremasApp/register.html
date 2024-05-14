@@ -8,13 +8,13 @@
 </head>
 
 <body>
-    <h2>Login</h2>
-    <form method="post" action="{% url 'login' %}">
+    <h2>Registro</h2>
+    <form method="post" action="{% url 'register' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Ingresar</button>
+        <button type="submit">Registrar</button>
     </form>
-    <a href="{% url 'register' %}">Registrar</a>
+    <a href="{% url 'login' %}">Ingresar</a>
 </body>
 
 </html>
