@@ -92,33 +92,88 @@
             </section>
         </section>
 
-        <form id="form-checkout">
-            <div id="form-checkout__cardNumber" class="container"></div>
-            <div id="form-checkout__expirationDate" class="container"></div>
-            <div id="form-checkout__securityCode" class="container"></div>
-            <input type="text" id="form-checkout__cardholderName" />
-            <select id="form-checkout__issuer"></select>
-            <select id="form-checkout__installments"></select>
-            <select id="form-checkout__identificationType"></select>
-            <input type="text" id="form-checkout__identificationNumber" />
-            <input type="email" id="form-checkout__cardholderEmail" />
-        
-            <button type="submit" id="form-checkout__submit">Pagar</button>
-            <progress value="0" class="progress-bar">Cargando...</progress>
-        </form>
+        <div class="px-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Productos</h1>
+
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/static/img/TaladroMenu.webp" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h2 class="product-title">Taladro 1</h2>
+                                    <p class="card-text">$25000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="/static/img/TaladroMenu.webp" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h2 class="product-title">Taladro 1</h2>
+                                    <p class="card-text">$25000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <h1>Datos de pago</h1>
+                    <form class="form">
+                        <div class="credit-card-info--form">
+                            <div class="input_container">
+                                <label for="password_field" class="input_label" style="margin: 1em 0 0 0;">Nombre
+                                    titular
+                                    tarjeta</label>
+                                <input id="password_field" class="input_field" type="text"
+                                    placeholder="Ingrese nombre completo">
+                            </div>
+                            <div class="input_container">
+                                <label for="password_field" class="input_label" style="margin: 1em 0 0 0;">Numero de la
+                                    tarjeta</label>
+                                <input id="password_field" class="input_field" type="number"
+                                    placeholder="0000 0000 0000 0000">
+                            </div>
+                            <div class="input_container">
+                                <label for="password_field" class="input_label" style="margin: 1em 0 0 0;">Fecha de
+                                    vencimiento / CVV</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input id="password_field" class="input_field" type="text" placeholder="mm/aa">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input id="password_field" class="input_field" type="number" placeholder="CVV">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary mt-3" href="/FerremasApp/pago-exitoso">Pagar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </body>
-    <!-- Scripts -->
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
-    <script src="/static/js/mercadoPago.js" type="module"></script>
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/browser.min.js"></script>
-    <script src="/static/js/breakpoints.min.js"></script>
-    <script src="/static/js/util.js"></script>
-    <script src="/static/js/main.js"></script>
+<!-- Scripts -->
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/browser.min.js"></script>
+<script src="/static/js/breakpoints.min.js"></script>
+<script src="/static/js/util.js"></script>
+<script src="/static/js/main.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
 </html>

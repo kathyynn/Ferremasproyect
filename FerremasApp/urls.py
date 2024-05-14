@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from FerremasApp.views import renderIndex, renderProducto, renderSucursal, renderBodegueros, renderSingle, renderCarroCompras, renderAdmin, renderPortalPago, sendPage, conversorMoneda, register, login
+from FerremasApp.views import renderIndex, renderProducto, renderSucursal, renderBodegueros, renderSingle, renderCarroCompras, renderAdmin, renderPortalPago, sendPage, conversorMoneda, register, login, renderPaxoExitoso
 
 urlpatterns = [
     ##Escuchador de cambios en la ruta, si detecta cambio, ejecuta funcion respectivo a la conincidencia encontrada
@@ -14,6 +14,7 @@ urlpatterns = [
     path('carro-compras/', renderCarroCompras),
     path('admin-contador/', renderAdmin),
     path('portal-pago/', renderPortalPago),
+    path('pago-exitoso/', renderPaxoExitoso),
     path('process_payment/', sendPage),
     path('conversor-moneda/', conversorMoneda),
     path('register/', register, name='register'),

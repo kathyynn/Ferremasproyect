@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-import mercadopago
-import uuid
 import json
 import requests
 from django.http import JsonResponse
@@ -33,34 +31,12 @@ def renderAdmin(request):
 def renderPortalPago(request):
     return render(request, 'FerremasApp/portal-pago.html')
 
+def renderPaxoExitoso(request):
+    return render(request, 'FerremasApp/pago-exitoso.html')
+
 def sendPage(request):
     ##Encargado de crear venta con los datos enviados en mercado pago
-    sdk = mercadopago.SDK("TEST-5826808575170186-051116-0d09cb3bfd33a8edb88d8a90d6979956-462473584")
-
-    request_options = mercadopago.config.RequestOptions()
-    request_options.custom_headers = {
-        'x-idempotency-key': str(uuid.uuid4())
-    }
-
-    payment_data = {
-        "transaction_amount": float(request.POST.get("transaction_amount")),
-        "token": request.POST.get("token"),
-        "description": request.POST.get("description"),
-        "installments": int(request.POST.get("installments")),
-        "payment_method_id": request.POST.get("payment_method_id"),
-        "payer": {
-            "email": request.POST.get("email"),
-            "identification": {
-                "type": request.POST.get("type"), 
-                "number": request.POST.get("number")
-            }
-        }
-    }
-    
-    payment_response = sdk.payment().create(payment_data, request_options)
-    payment = payment_response["response"]
-    
-    print(payment)
+    print('asd')
 
 def conversorMoneda(request):
     indicador = request.GET.get('indicador', None)

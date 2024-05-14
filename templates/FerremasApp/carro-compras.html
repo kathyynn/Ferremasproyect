@@ -90,42 +90,83 @@
             </section>
         </section>
 
-        <div class="container" style="width: fit-content;">
-            <form action="../conversor-moneda/" method="GET"> {% csrf_token %}
-                <div class="form-group">
-                    <label for="indicador" style="margin: 1em 0 0 0;">Indicador:</label>
-                    <select class="form-control" id="indicador" name="indicador">
-                        <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="dolar">Dolar</option>
-                        <option value="uf">Unidades de fomento</option>
-                        <option value="ivp">Indice de valor promedio (IVP)</option>
-                        <option value="dolar_intercambio">Dólar acuerdo</option>
-                        <option value="euro">Euro</option>
-                        <option value="ipc">Indice de Precios al Consumidor (IPC)</option>
-                        <option value="utm">Unidad Tributaria Mensual (UTM)</option>
-                        <option value="imacec">Imacec</option>
-                        <option value="tpm">Tasa Política Monetaria (TPM)</option>
-                        <option value="libra_cobre">Libra de Cobre</option>
-                        <option value="tasa_desempleo">Tasa de desempleo</option>
-                        <option value="bitcoin">Bitcoin</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="date" style="margin: 1em 0 0 0;">Fecha:</label>
-                    <input type="text" class="form-control" id="date" name="date" placeholder="Fecha dd-mm-aaaa">
-                </div>
-                <div class="form-group">
-                    <label for="precioFinal" style="margin: 1em 0 0 0;">Precio Final:</label>
-                    <input type="number" class="form-control" id="precioFinal" name="precioFinal" placeholder="Precio final" value="37000" readonly>
-                </div>
-                <button type="submit" class="mt-4 d-flex m-auto">Consultar</button>
-                
-            </form>
-        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <h1>Productos</h1>
 
-        {%if precioConvertido%}
-            <h1 class="mt-4 text-center mb-4">El precio transformado es de: {{precioConvertido}}</h1>
-        {% endif %}
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/static/img/TaladroMenu.webp" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2 class="product-title">Taladro 1</h2>
+                                <p class="card-text">$25000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/static/img/TaladroMenu.webp" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2 class="product-title">Taladro 1</h2>
+                                <p class="card-text">$25000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="container">
+                    <form action="../conversor-moneda/" method="GET"> {% csrf_token %}
+                        <div class="form-group">
+                            <label for="indicador" style="margin: 1em 0 0 0;">Indicador:</label>
+                            <select class="form-control" id="indicador" name="indicador">
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="dolar">Dolar</option>
+                                <option value="uf">Unidades de fomento</option>
+                                <option value="ivp">Indice de valor promedio (IVP)</option>
+                                <option value="dolar_intercambio">Dólar acuerdo</option>
+                                <option value="euro">Euro</option>
+                                <option value="ipc">Indice de Precios al Consumidor (IPC)</option>
+                                <option value="utm">Unidad Tributaria Mensual (UTM)</option>
+                                <option value="imacec">Imacec</option>
+                                <option value="tpm">Tasa Política Monetaria (TPM)</option>
+                                <option value="libra_cobre">Libra de Cobre</option>
+                                <option value="tasa_desempleo">Tasa de desempleo</option>
+                                <option value="bitcoin">Bitcoin</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date" style="margin: 1em 0 0 0;">Fecha:</label>
+                            <input type="text" class="form-control" id="date" name="date" placeholder="Fecha dd-mm-aaaa">
+                        </div>
+                        <div class="form-group">
+                            <label for="precioFinal" style="margin: 1em 0 0 0;">Precio Final:</label>
+                            <input type="number" class="form-control" id="precioFinal" name="precioFinal" placeholder="Precio final" value="37000" readonly>
+                        </div>
+                        {%if precioConvertido%}
+                            <h1 class="mt-4 text-center mb-4">El precio transformado es de: {{precioConvertido}}</h1>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button type="submit" class="mt-4 d-flex m-auto">Consultar</button>
+                            </div>
+                            <div class="col-md-6">
+                                <a class="mt-4" style="display: flex; justify-content: center;" href="/FerremasApp/portal-pago">Ir a pagar</a>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer -->
         <section id="footer">
